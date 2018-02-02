@@ -1,6 +1,8 @@
 # 本文使用requests+beautifulsoup4编写图片爬虫new_get.py脚本，这点与原作者不同
 <br />
-用法：$ python new_get.py --mode scrape
+用法：
+
+> $ python new_get.py --mode scrape
 <br />
 --proxy参数我没有使用，如果想用，请自行修改new_get.py
 <br />
