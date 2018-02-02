@@ -8,7 +8,7 @@
 值得注意的是：原作者每轮的样本(~15000)都是用for loop获取的，这使训练的速度大副降低，这是一个值得优化的方向
 
 
-1.首先下载对应的图片+txt标签文档描述，进入datasetdownload，执行`python new_get.py --mode scrape`
+1.首先下载对应的图片+txt标签文档描述，进入datasetdownload，执行`python new_get.py --mode scrape`，我爬了11w+的图片(14G)，本打算共享出来的，但百度网盘最大上传只有4G(如果有好的共享方法，请指教)
 
 
 2.进行图片与标签配对. `python make_datapair.py --make_tag_index`,生成tag_index.pkl文件，元素5000个，这是原作者hard_coding的，如有需要可自行修改
