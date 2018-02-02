@@ -7,9 +7,11 @@ import glob
 import json
 import random
 import sys
+import tqdm
+
 if '--make_tag_index' in sys.argv:
   tag_freq = {}
-  for name in glob.glob('../datasetdownload/imgs/*.txt'):
+  for name in tqdm.tqdm(glob.glob('../datasetdownload/imgs/*.txt')):
     for tag in open(name).read().split():
       if tag_freq.get(tag) is None:
         tag_freq[tag] = 0
@@ -28,16 +30,17 @@ if '--make_tag_index' in sys.argv:
 if '--make_pair' in sys.argv:
   tag_index = pickle.loads( open('tag_index.pkl', 'rb').read() )
   target_size = (224,224)
-  for name in glob.glob('../datasetdownload/imgs/*.txt'):
+  for name in tqdm.tqdm(glob.glob('../datasetdownload/imgs/*.txt')):
     img_name = name.replace('.txt', '.jpg')
     if not os.path.exists(img_name):
       continue
 
-    save_name = 'dataset/{}.pkl'.format(img_name.split('/').pop().replace('.jpg', '') + '.pkl')
+    save_name = 'dataset/{}.pkl'.format(img_name.split('/').pop().split('.')[0])
     if os.path.exists(save_name):
       continue
-    img = Image.open(img_name)
+    
     try:
+      img = Image.open(img_name)
       img = img.convert('RGB')
     except OSError as e:
       continue
