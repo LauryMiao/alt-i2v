@@ -29,7 +29,7 @@ x = BN()(x)
 x = Dense(5000, activation='relu')(x)
 x = Dropout(0.3)(x)
 x = Dense(5000, activation='sigmoid')(x)
-model = Model(input=vgg16_model.input, output=x)
+model = Model(inputs=vgg16_model.input, outputs=x)
 model.compile(loss='binary_crossentropy', optimizer='adam')
 
 def train():
