@@ -25,7 +25,7 @@
 
 > python alt_i2v_V2.py --pred #30个测试对象
 
-
+![progress](progress.png)
 
 
 ## Alternative Illustration2Vec Ver2の概要
