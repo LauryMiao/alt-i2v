@@ -12,7 +12,7 @@
 
 
 2.进行图片与标签配对. `python make_datapair.py --make_tag_index`,生成tag_index.pkl文件，元素5000个，这是原作者hard_coding的，如有需要可自行修改
-
+我对make_datapair.py进行了一点修改，1.增加了进度条，2.原作者保存的文件会是.pkl.pkl，这里我改为了.pkl
 
 3.再执行`python make_datapair.py --make_pair`，生成多个dataset/ith_img.pkl，每个pkl文件包含[图片矩阵，标签one_hot]两个元素
 
