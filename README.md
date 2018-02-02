@@ -1,5 +1,27 @@
 # Alternative Implementation Of Illustration2Vec Ver2.
 
+# 中文个人理解
+
+1.首先下载对应的图片+txt标签文档描述，进入datasetdownload，执行`python new_get.py --mode scrape`
+
+
+2.进行图片与标签配对. `python make_datapair.py -make_tag_index`,生成tag_index.pkl文件，元素5000个，这是原作者hard_coding的，如有需要可自行修改
+
+
+3.再执行`python make_datapair.py -make_pair`，生成多个dataset/ith_img.pkl，每个pkl文件包含[图片矩阵，标签one_hot]两个元素
+
+
+4.训练与测试
+
+
+> python alt_i2v_V2.py --train #5000个训练对象
+
+
+> python alt_i2v_V2.py --pred #30个测试对象
+
+
+
+
 ## Alternative Illustration2Vec Ver2の概要
 - 画像をタグ等の特定の特徴量に従ってベクトル化できる
 - このベクトルとは通常画像分類で用いられるsoftmaxなどのマルチクラスではなく、softprobの(\*1)問題として捉えることができる
