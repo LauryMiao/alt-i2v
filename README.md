@@ -20,7 +20,7 @@
 4.训练与测试
 
 
-> python alt_i2v_V2.py --train #5000个训练对象
+> python alt_i2v_V2.py --train #5000个标签,15000个样本,500轮
 
 ![load](GPU_TRAIN.png)
 ![train](GPU_TRAIN2.png)
