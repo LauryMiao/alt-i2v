@@ -22,6 +22,10 @@
 
 > python alt_i2v_V2.py --train #5000个训练对象
 
+![load](GPU_TRAIN.png)
+![train](GPU_TRAIN2.png)
+
+可以看到15000太大了，内存不够，可以调小试试
 
 > python alt_i2v_V2.py --pred #30个测试对象
 
